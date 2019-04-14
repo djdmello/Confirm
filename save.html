@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Confirm</title>
+    <title>Save</title>
     <style>
         html, body {
             font-size:2.0em;
@@ -61,37 +61,17 @@
 
 </head>
 <body>
-<p>Do you want to register for </p>
+<p>You have reached the SAVE page for course </p>
 <p id="courseN"></p>
 
 
-<p>?</p>
+
 <script>
     var url=window.location.href;
     var cn=location.search.slice(1).split("=")[1];
     document.getElementById("courseN").innerHTML = cn;
 
-    function redirectTo(){
-        var link="/save?courseNumber="+ cn;
-        window.location.href=link;
-
-    }
-    function goback(){
-        window.location.href="/cancel?courseNumber="+ cn;
-
-    }
 </script>
-<br>
-
-<div>
-
-    <a href="#" onclick="redirectTo();">Yes</a>
-</div>
-
-
-<div>
-    <a href="#" onclick="goback();">No</a>
-</div>
 
 
 
