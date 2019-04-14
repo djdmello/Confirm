@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Registration</title>
+    <style>
+        html, body {
+            font-size:2.0em;
+            text-align:center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #d1d1d1;
+        }
+        #button1{
+            padding:0px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            width: 20%;
+
+        }
+        #button2{
+
+            padding:0px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            width: 20%;
+        }
+        p{
+            font-size:1.0em;
+            text-align:center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #d1d1d1;
+            display:inline;
+            white-space:normal;
+
+        }
+        a{
+            font-size:24px;
+            background-color:#9555AF;
+            border: 2px solid #555555;
+            color:#FFFFFF;
+            padding:0.5em 1.0em;
+            display:inline-block;
+            text-decoration:none;
+
+
+
+        }
+        #mute {
+            position: absolute;
+        }
+        #mute.on {
+            opacity: 0.7;
+            z-index: 1000;
+            background: white;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+<p>Do you want to register for </p>
+
+<p id="courseN"></p>
+
+
+<p>?</p>
+<script>
+    var url=window.location.href;
+    var cn=location.search.slice(1).split("=")[1];
+    document.getElementById("courseN").innerHTML = cn;
+
+    function redirectTo(){
+        var link="/Save?courseNumber="+ cn;
+        window.location.href=link;
+
+    }
+    function goback(){
+        window.location.href="/";
+
+    }
+</script>
+<br>
+<br>
+
+
+
+<div id="button1">
+
+    <button><a href="#" onclick="redirectTo();">Yes</a></button>
+</div>
+<div id="button2">
+    <button><a href="#" onclick="goback();">No</a></button>
+</div>
+<div id="mute"></div>
+<div id="app"></div>
+
+</body>
+</html>
