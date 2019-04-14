@@ -76,6 +76,34 @@
 </head>
 <body>
 <p>Do you want to register for </p>
+<p id="courseN"></p>
+
+
+<p>?</p>
+<script>
+    var url=window.location.href;
+    var cn=location.search.slice(1).split("=")[1];
+    document.getElementById("courseN").innerHTML = cn;
+
+    function redirectTo(){
+        var link="/Save?courseNumber="+ cn;
+        window.location.href=link;
+
+    }
+    function goback(){
+        window.location.href="/";
+
+    }
+</script>
+<br>
+<br>
+<div id="button1">
+
+    <button><a href="#" onclick="redirectTo();">Yes</a></button>
+</div>
+<div id="button2">
+    <button><a href="#" onclick="goback();">No</a></button>
+</div>
 
 
 
